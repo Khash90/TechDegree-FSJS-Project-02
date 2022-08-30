@@ -61,7 +61,7 @@ function addPagination(list){
   // loop over the number of pages needed
     // create the elements needed to display the pagination button
     // insert the above elements
-   for(let i=1; i<numOfPages.length ; i++) {
+   for(let i=1; i<=numOfPages ; i++) {
       
       buttonsPage += `
       <li>
@@ -75,7 +75,8 @@ function addPagination(list){
       // remove the "active" class from the previous button
       // add the active class to the clicked button
       // call the showPage function passing the `list` parameter and page to display as arguments
-      const button = document.querySelector("button[type='button']")
+      const button = document.querySelectorAll("button[type='button']");
+      console.log(buttonsPage);
       button[0].classList.add('active');
       linkList.addEventListener('click', (event) => {
          const clicked = event.target;
