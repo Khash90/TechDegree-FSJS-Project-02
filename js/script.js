@@ -84,7 +84,7 @@ function addPagination(list){
             const activeButton = document.getElementsByClassName('active');
             activeButton[0].classList.remove('active');
             clicked.classList.add('active');
-            showPage(list);
+            showPage(list , clicked.textContent);
           }
         })
 }
@@ -93,3 +93,5 @@ function addPagination(list){
 // Call functions
 showPage(data,1)
 addPagination(data)
+
+//search Tab
