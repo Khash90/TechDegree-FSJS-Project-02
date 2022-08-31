@@ -136,7 +136,7 @@ addPagination(data)
            } else {
             const ul = document.querySelector('.student-list');
             const li = document.createElement('li');
-            li.innerHTML = `<li>kasnfknasf</li>`;
+            li.innerHTML = `<li>no results</li>`;
             ul.appendChild(li)
             
           }
