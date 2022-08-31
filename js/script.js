@@ -126,11 +126,11 @@ addPagination(data)
       const searchInput = document.getElementById('search');
       searchInput.addEventListener("input", (e) => {
          let newArray = [];
-         let searchTerm = e.target.value;
+         let searchTerm = e.target.value.toLowerCase;
          for (let i = 0; i < data.length; i++) {
             let name = `${data[i].name.first} ${data[i].name.last}`;
          //   console.log(name);
-            if(searchTerm !== 0 && name.textContent.toLowerCase().includes(searchTerm.toLowerCase())) {
+            if(searchTerm !==0 && name.textContent.includes(searchTerm)) {
             newArray.push();
           }
            console.log(name);
@@ -138,3 +138,4 @@ addPagination(data)
          }
          console.log(e.target.value);
        });
+       
