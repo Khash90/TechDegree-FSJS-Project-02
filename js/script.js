@@ -4,8 +4,6 @@ FSJS Project 2 - Data Pagination and Filtering
 */
 
 
-
-
 /*
 Create the `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
@@ -96,6 +94,7 @@ addPagination(data)
  
 
 //search Tab
+//creating and displaying the search bar
  const searchDisplay = () => {
     const header = document.querySelector('.header');
     const label = document.createElement('label');
@@ -108,9 +107,10 @@ addPagination(data)
      `
      header.appendChild(label);
  }
-
+ //calling searchDisplay to display on page
  searchDisplay();
-// So :
+
+// what needs to be done for search functionality ,So :
       // Capture the user input
       // Search through your records
       // Check each record to see if they include the search term
@@ -125,34 +125,41 @@ addPagination(data)
 
       const searchInput = document.getElementById('search');
       searchInput.addEventListener("input", (e) => {
+         //create new array to push the matches
          let newArray = [];
+          // Capture the user input
          let searchTerm = e.target.value.toLowerCase();
+         //create a loop to go through our data
          for (let i = 0; i < data.length; i++) {
             let name = `${data[i].name.first.toLocaleLowerCase()} ${data[i].name.last.toLocaleLowerCase()}`;
-         //   console.log(name);
+             //   console.log(name);
+
+             //if the input matches any first and last names
             if(searchTerm !==0 && name.includes(searchTerm)) {
+            //if they match then add to new array
             newArray.push(data[i]);
-            
-            
            } 
-         //   console.log(name);
-      }
-      if(newArray.length === 0) {
-         const ul = document.querySelector('.student-list');
+         //console.log(name);
+       }
+            //if new array ends up empty display no result on page
+             if(newArray.length === 0) {
+                 const ul = document.querySelector('.student-list');
+                  const linkList = document.querySelector('.link-list');
+                  ul.innerHTML = `<li>no result</li>`;
+                 //removing page buttons 
+                 linkList.innerHTML = '';
+                 // console.log(ul)
+                }
         
-            ul.innerHTML = `<li>no result</li>`;
-            
-            // console.log(ul)
-        } else {
-         showPage(newArray, 1);
-         addPagination(newArray);
-        }
-   
-         // console.log(newArray); 
-         // if (name)
+             else {
+               //when newArray matches ,show on page
+              showPage(newArray, 1);
+              addPagination(newArray);
+             }
+           // console.log(newArray);   
  });
        
-//  else if(searchTerm !==0 && name.includes(searchTerm)) {
+//  else if(newArray.length === 0) {
 //    const div = document.querySelector('.student-details');
 //    const h3 = document.createElement('h3');
 //    h3.innerHTML = `<h3>no result</h3>`;
