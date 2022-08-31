@@ -133,18 +133,29 @@ addPagination(data)
             if(searchTerm !==0 && name.includes(searchTerm)) {
             newArray.push(data[i]);
             
-           } else {
-            const ul = document.querySelector('.student-list');
-            const li = document.createElement('li');
-            li.innerHTML = `<li>no results</li>`;
-            ul.appendChild(li)
             
-          }
+           } 
          //   console.log(name);
       }
-      showPage(newArray, 1);
-      addPagination(newArray);
+      if(newArray.length === 0) {
+         const ul = document.querySelector('.student-list');
+         //    const h3 = document.createElement('h3');
+            ul.innerHTML = `<li>no result</li>`;
+            // div.appendChild(h3)
+            console.log(ul)
+        } else {
+         showPage(newArray, 1);
+         addPagination(newArray);
+        }
+   
          // console.log(newArray); 
          // if (name)
  });
        
+//  else if(searchTerm !==0 && name.includes(searchTerm)) {
+//    const div = document.querySelector('.student-details');
+//    const h3 = document.createElement('h3');
+//    h3.innerHTML = `<h3>no result</h3>`;
+//    div.appendChild(h3)
+//    console.log(h3)
+//   }
