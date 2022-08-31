@@ -128,16 +128,22 @@ addPagination(data)
          let newArray = [];
          let searchTerm = e.target.value.toLowerCase();
          for (let i = 0; i < data.length; i++) {
-            let name = `${data[i].name.first} ${data[i].name.last}`;
+            let name = `${data[i].name.first.toLocaleLowerCase()} ${data[i].name.last.toLocaleLowerCase()}`;
          //   console.log(name);
             if(searchTerm !==0 && name.includes(searchTerm)) {
             newArray.push(data[i]);
+            
+           } else {
+            const ul = document.querySelector('.student-list');
+            const li = document.querySelector('.student-item');
+            li.innerHTML = `<li>kasnfknasf</li>`;
+            ul.appendChild(li)
           }
          //   console.log(name);
-         }
-         // console.log(newArray);
-
-         showPage(newArray, 1);
-         addPagination(newArray);
-       });
+      }
+      showPage(newArray, 1);
+      addPagination(newArray);
+         // console.log(newArray); 
+         // if (name)
+ });
        
