@@ -135,9 +135,10 @@ addPagination(data)
             
            } else {
             const ul = document.querySelector('.student-list');
-            const li = document.querySelector('.student-item');
+            const li = document.createElement('li');
             li.innerHTML = `<li>kasnfknasf</li>`;
             ul.appendChild(li)
+            
           }
          //   console.log(name);
       }
