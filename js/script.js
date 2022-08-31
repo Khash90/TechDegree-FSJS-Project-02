@@ -131,11 +131,12 @@ addPagination(data)
             let name = `${data[i].name.first} ${data[i].name.last}`;
          //   console.log(name);
             if(searchTerm !==0 && name.includes(searchTerm)) {
-            newArray.push(searchTerm);
+            newArray.push(data[i]);
           }
          //   console.log(name);
          }
-         console.log(newArray);
+         // console.log(newArray);
+
          showPage(newArray, 1);
          addPagination(newArray);
        });
