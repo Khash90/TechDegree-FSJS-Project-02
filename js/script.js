@@ -110,7 +110,7 @@ addPagination(data)
  }
 
  searchDisplay();
-// So you'd need to:
+// So :
       // Capture the user input
       // Search through your records
       // Check each record to see if they include the search term
@@ -139,10 +139,10 @@ addPagination(data)
       }
       if(newArray.length === 0) {
          const ul = document.querySelector('.student-list');
-         //    const h3 = document.createElement('h3');
+        
             ul.innerHTML = `<li>no result</li>`;
-            // div.appendChild(h3)
-            console.log(ul)
+            
+            // console.log(ul)
         } else {
          showPage(newArray, 1);
          addPagination(newArray);
