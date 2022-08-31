@@ -93,5 +93,49 @@ function addPagination(list){
 // Call functions
 showPage(data,1)
 addPagination(data)
+ 
 
 //search Tab
+ const searchDisplay = () => {
+    const header = document.querySelector('.header');
+    const label = document.createElement('label');
+     label.innerHTML =`
+     <label for="search" class="student-search">
+     <span>Search by name</span>
+     <input id="search" placeholder="Search by name...">
+     <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
+     </label>
+     `
+     header.appendChild(label);
+ }
+
+ searchDisplay();
+// So you'd need to:
+      // Capture the user input
+      // Search through your records
+      // Check each record to see if they include the search term
+      // Then return all the matching records to the user
+
+      // "How can I capture what the user is searching for?"
+      // "How can I check out the data available, one at a time?"
+      // "How can I see if each piece of data being checked out includes the users search terms?"
+      // "If they match, what do I do?"
+      // "If they don't match, what do I do?"
+      // "How do I return all matches?"
+
+      const searchInput = document.getElementById('search');
+      searchInput.addEventListener("input", (e) => {
+         let newArray = [];
+         let searchTerm = e.target.value
+         for (let i = 0; i < data.length; i++) {
+            
+           let name = `${data[i].name.first} ${data[i].name.last}`;
+         //   console.log(name);
+         if(searchTerm !== 0 && name[i].textContent.toLowerCase().includes(searchTerm.toLowerCase())) {
+            newArray.push();
+         }
+           console.log(name);
+           
+         }
+         console.log(e.target.value);
+       });
