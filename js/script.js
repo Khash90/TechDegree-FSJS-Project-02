@@ -145,7 +145,7 @@ addPagination(data)
              if(newArray.length === 0) {
                  const ul = document.querySelector('.student-list');
                   const linkList = document.querySelector('.link-list');
-                  ul.innerHTML = `<li>no result</li>`;
+                  ul.innerHTML = `<li>Sorry , No Results</li>`;
                  //removing page buttons 
                  linkList.innerHTML = '';
                  // console.log(ul)
